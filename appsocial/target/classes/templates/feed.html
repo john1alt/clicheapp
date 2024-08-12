@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Feed</title>
+</head>
+<body>
+<h1>Your Feed</h1>
+<form th:action="@{/post}" method="post">
+    <input type="text" name="title" placeholder="Post Title" required/>
+    <textarea name="content" placeholder="Post Content" required></textarea>
+    <button type="submit">Create Post</button>
+</form>
+
+<div th:each="post : ${posts}">
+    <h2 th:text="${post.title}"></h2>
+    <p th:text="${post.content}"></p>
+    <p th:text="${post.createdAt}"></p>
+    <p>
+        Posted by <span th:text="${post.author.username}"></span>
+        <span sec:authorize="isAuthenticated()">
+            <a th:href="@{/follow(userId=${post.author.id})}">Follow</a>
+        </span>
+    </p>
+</div>
+</body>
+</html>

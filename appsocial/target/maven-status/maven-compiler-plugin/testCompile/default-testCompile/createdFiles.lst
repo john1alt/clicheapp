@@ -1,0 +1,7 @@
+com\example\appsocial\AppsocialApplicationTests.class
+com\example\appsocial\integrationtests\PostControllerIntegrationTest.class
+com\example\appsocial\unittests\PostServiceTest.class
+com\example\appsocial\integrationtests\UserControllerIntegrationTest.class
+com\example\appsocial\unittests\CustomUserDetailsManagerTest.class
+com\example\appsocial\integrationtests\SecurityConfigIntegrationTest.class
+com\example\appsocial\unittests\UserServiceTest.class
